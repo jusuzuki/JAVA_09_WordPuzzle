@@ -21,7 +21,6 @@ public class WordPuzzle {
       model.put("template","templates/result.vtl");
 
       String phrase = request.queryParams("phrase");
-      model.put("phrase", phrase);
       String result = puzzle(phrase);
       model.put("result", result);
 
@@ -31,21 +30,28 @@ public class WordPuzzle {
 
   public static String puzzle(String phrase) {
 
+    // convert phrase into char Array
     char[] phraseChar = phrase.toCharArray();
-    //Character[] phraseCharacter = ArrayUtils.toObject(phraseChar);
 
+    // replace vowels with dash symbol
     for (Integer index = 0; index < phrase.length(); index++) {
       if (phraseChar[index] == 'a' || phraseChar[index] == 'e' ||
           phraseChar[index] == 'i' || phraseChar[index] == 'o' ||
           phraseChar[index] == 'u'){
+
+        phraseChar[index] = '-';
+
+      } else if (phraseChar[index] == 'A' || phraseChar[index] == 'E' ||
+          phraseChar[index] == 'I' || phraseChar[index] == 'O' ||
+          phraseChar[index] == 'U'){
+
         phraseChar[index] = '-';
       }
-
     }
+
+    // return string with dashes instead of vowels
     String output = new String(phraseChar);
     return output;
-
-
   }
 
 }

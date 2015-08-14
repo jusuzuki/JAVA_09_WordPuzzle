@@ -33,6 +33,13 @@ public class WordPuzzleTest extends FluentTest {
   }
 
   @Test
+  public void puzzle_changeLetter_AEIOU(){
+    WordPuzzle wordpuzzle = new WordPuzzle();
+    String expValue = "M-K- G--D -RT. N--L G--M-N";
+    assertEquals(expValue, wordpuzzle.puzzle("MAKE GOOD ART. NEIL GAIMAN"));
+  }
+
+  @Test
   public void rootTest() {
     goTo("http://localhost:4567/");
     assertThat(pageSource()).contains("Word Puzzle");
@@ -44,6 +51,14 @@ public class WordPuzzleTest extends FluentTest {
     fill("#phrase").with("queen");
     submit(".btn");
     assertThat(pageSource()).contains("q---n");
+  }
+
+  @Test
+  public void result_displayCorrectOutputUppercase() {
+    goTo("http://localhost:4567/");
+    fill("#phrase").with("FRAGILE THINGS BY NEIL GAIMAN");
+    submit(".btn");
+    assertThat(pageSource()).contains("FR-G-L- TH-NGS BY N--L G--M-N");
   }
 
 }
