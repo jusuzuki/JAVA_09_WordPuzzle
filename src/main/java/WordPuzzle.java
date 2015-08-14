@@ -35,7 +35,9 @@ public class WordPuzzle {
     //Character[] phraseCharacter = ArrayUtils.toObject(phraseChar);
 
     for (Integer index = 0; index < phrase.length(); index++) {
-      if (phraseChar[index] == 'a'){
+      if (phraseChar[index] == 'a' || phraseChar[index] == 'e' ||
+          phraseChar[index] == 'i' || phraseChar[index] == 'o' ||
+          phraseChar[index] == 'u'){
         phraseChar[index] = '-';
       }
 
