@@ -2,8 +2,7 @@
 
 ##### A website that takes a phrase and replaces vowels with the dash symbol to create a word puzzle to solve.
 Created on August 15th 2015
-
-#### By Juliana Suzuki
+By Juliana Suzuki
 
 ## Description
 
