@@ -12,12 +12,15 @@ the new string without vowels is displayed in another page.
 
 ## Setup
 
-* Gradle was used as a build tool
+* Run project with Gradle and open on http://localhost:4567/
 
 
 ## Technologies Used
 
 * JAVA and Spark Framework
+* Tested using FluentLenium Framework
+* Templates generated with Apache Velocity Engine
+* HTML/CSS/Boostrap
 
 ### Legal
 
