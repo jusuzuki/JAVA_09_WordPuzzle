@@ -34,19 +34,25 @@ public class WordPuzzle {
     char[] phraseChar = phrase.toCharArray();
 
     // replace vowels with dash symbol
-    for (Integer index = 0; index < phrase.length(); index++) {
-      if (phraseChar[index] == 'a' || phraseChar[index] == 'e' ||
-          phraseChar[index] == 'i' || phraseChar[index] == 'o' ||
-          phraseChar[index] == 'u'){
+    // for (Integer index = 0; index < phrase.length(); index++) {
+    //   if (phraseChar[index] == 'a' || phraseChar[index] == 'e' ||
+    //       phraseChar[index] == 'i' || phraseChar[index] == 'o' ||
+    //       phraseChar[index] == 'u'){
+    //
+    //     phraseChar[index] = '-';
+    //
+    //   } else if (phraseChar[index] == 'A' || phraseChar[index] == 'E' ||
+    //       phraseChar[index] == 'I' || phraseChar[index] == 'O' ||
+    //       phraseChar[index] == 'U'){
+    //
+    //   phraseChar[index] = '-';
+    // }
 
-        phraseChar[index] = '-';
-
-      } else if (phraseChar[index] == 'A' || phraseChar[index] == 'E' ||
-          phraseChar[index] == 'I' || phraseChar[index] == 'O' ||
-          phraseChar[index] == 'U'){
-
-        phraseChar[index] = '-';
-      }
+    // refactored loop
+      for (Integer index = 0; index < phrase.length(); index++) {
+        if ("AEIOUaeiou".contains(String.valueOf(phraseChar[index]))){
+          phraseChar[index] = '-';
+        }
     }
 
     // return string with dashes instead of vowels
