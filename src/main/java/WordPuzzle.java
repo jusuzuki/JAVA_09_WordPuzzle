@@ -48,7 +48,7 @@ public class WordPuzzle {
     //   phraseChar[index] = '-';
     // }
 
-    // refactored loop
+    // refactored loop for replacing vowels with dash symbol
       for (Integer index = 0; index < phrase.length(); index++) {
         if ("AEIOUaeiou".contains(String.valueOf(phraseChar[index]))){
           phraseChar[index] = '-';
